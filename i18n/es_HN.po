@@ -1,0 +1,2000 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* Dental
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-17 17:42+0000\n"
+"PO-Revision-Date: 2014-09-17 16:20-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. module: Dental
+#: help:dental.patient.disease,age:0
+msgid "Patient age at the moment of the diagnosis. Can be estimative"
+msgstr "La edad del paciente en el momento del diagnóstico. Puede ser estimativa"
+
+#. module: Dental
+#: view:dental.medicament:0
+#: view:dental.patient.evaluation:0
+msgid "Main Info"
+msgstr "Información principal"
+
+#. module: Dental
+#: help:res.partner,is_person:0
+msgid "Check if the partner is a person."
+msgstr "Marque si la persona es un Paciente"
+
+#. module: Dental
+#: field:dental.appointment,doctor:0
+#: field:dental.appointment,user_id:0
+#: field:dental.patient.disease,doctor:0
+#: field:dental.patient.medication,doctor:0
+#: view:dental.physician:0
+#: field:dental.physician,name:0
+#: field:dental.physician.line,physician_id:0
+#: model:ir.ui.menu,name:Dental.physician_menu
+msgid "Physician"
+msgstr "Médico"
+
+#. module: Dental
+#: model:ir.actions.act_window,help:Dental.dental_action_form_appointment
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"					Click to add a new appointment.\n"
+"				  </p><p>\n"
+"					With just a quick glance on the OpenERP appointment screen, you\n"
+"					can easily find all the information about your each day appointments;					\n"
+"				  </p>\n"
+"				"
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"					Haga clic para añadir una nueva cita.\n"
+"				  </p><p>\n"
+"					Con sólo un vistazo rápido en la pantalla nombramiento OpenERP, que\n"
+"					puede encontrar fácilmente toda la información acerca de sus citas cada día;					\n"
+"				  </p>\n"
+"				"
+
+#. module: Dental
+#: view:dental.medicament:0
+msgid "medicament"
+msgstr "medicamento"
+
+#. module: Dental
+#: field:dental.patient.evaluation,derived_from:0
+msgid "Derived from Doctor"
+msgstr "Derivado de doctor"
+
+#. module: Dental
+#: help:res.partner,is_doctor:0
+msgid "Check if the partner is a doctor"
+msgstr "Marque si la persona es un médico"
+
+#. module: Dental
+#: field:dental.physician.line,name:0
+msgid "Available Day(s)"
+msgstr "Disponible Día (s)"
+
+#. module: Dental
+#: field:dental.medication.template,dose:0
+#: field:dental.patient.medication,dose:0
+msgid "Dose"
+msgstr "Dosis"
+
+#. module: Dental
+#: code:addons/Dental/medical_invoice/wizard/wizard_appointment_invoice.py:93
+#, python-format
+msgid "When multiple appointments are selected, patient must be the same"
+msgstr "Cuando se seleccionan varias citas, el paciente debe ser el mismo"
+
+#. module: Dental
+#: field:dental.dent,image_small:0
+#: field:dental.patient.evaluation,image_small:0
+msgid "Small-sized image"
+msgstr "Imagen de pequeño tamaño"
+
+#. module: Dental
+#: field:dental.patient.disease,is_infectious:0
+msgid "Infectious Disease"
+msgstr "Enfermedades Infecciosas"
+
+#. module: Dental
+#: selection:dental.patient.disease,status:0
+msgid "healed"
+msgstr "sanado"
+
+#. module: Dental
+#: field:dental.appointment,appointment_date:0
+msgid "Appointment Date"
+msgstr "Fecha de la cita"
+
+#. module: Dental
+#: selection:dental.insurance,type:0
+msgid "State"
+msgstr "Estado"
+
+#. module: Dental
+#: view:dental.medication.dosage:0
+msgid "Search Medication Common Dosages"
+msgstr "Buscar Medicamento Común Dosis"
+
+#. module: Dental
+#: view:dental.appointment:0
+msgid "General"
+msgstr "General"
+
+#. module: Dental
+#: field:dental.medicament,therapeutic_action:0
+msgid "Therapeutic effect"
+msgstr "Efecto terapéutico"
+
+#. module: Dental
+#: field:dental.appointment,patient:0
+#: view:dental.patient:0
+#: field:dental.patient,name:0
+#: view:dental.patient.evaluation:0
+#: field:dental.patient.medication,patient_id:0
+#: field:res.partner,is_patient:0
+msgid "Patient"
+msgstr "Paciente"
+
+#. module: Dental
+#: help:dental.medication.dosage,abbreviation:0
+msgid "Dosage abbreviation, such as tid in the US or tds in the UK"
+msgstr "Abreviatura de dosificación, tales como tres veces al día en los EE.UU. o en el Reino Unido tds"
+
+#. module: Dental
+#: field:dental.patient.disease,diagnosed_date:0
+msgid "Date of Diagnosis"
+msgstr "Fecha de Diagnóstico"
+
+#. module: Dental
+#: help:dental.medication.dosage,name:0
+msgid "Common frequency name"
+msgstr "Nombre de frecuencia Común"
+
+#. module: Dental
+#: view:dental.patient:0
+msgid "My Patients"
+msgstr "Mis pacientes"
+
+#. module: Dental
+#: selection:dental.medication.template,duration_period:0
+#: selection:dental.medication.template,frequency_unit:0
+#: selection:dental.patient.medication,duration_period:0
+#: selection:dental.patient.medication,frequency_unit:0
+msgid "hours"
+msgstr "horas"
+
+#. module: Dental
+#: model:ir.actions.act_window,name:Dental.dental_patient_action_tree
+#: model:ir.actions.act_window,name:Dental.open_dental_patient_list
+#: model:ir.ui.menu,name:Dental.dental_edit_patient
+msgid "Patients"
+msgstr "Pacientes"
+
+#. module: Dental
+#: code:addons/Dental/medical_invoice/wizard/wizard_appointment_invoice.py:68
+#, python-format
+msgid "No consultation service is connected with the selected appointments"
+msgstr "No hay servicio de consulta esté vinculado con las citas seleccionadas"
+
+#. module: Dental
+#: help:dental.appointment,consultations:0
+msgid "Consultation Services"
+msgstr "Servicios de Consulta"
+
+#. module: Dental
+#: view:dental.medicament:0
+#: view:dental.patient.medication:0
+msgid "Dosage"
+msgstr "Dosis"
+
+#. module: Dental
+#: sql_constraint:dental.patient:0
+msgid "The Patient already exists"
+msgstr "Ya existe el Paciente"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d38:0
+msgid "38"
+msgstr "38"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d33:0
+msgid "33"
+msgstr "33"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d32:0
+msgid "32"
+msgstr "32"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d31:0
+msgid "31"
+msgstr "31"
+
+#. module: Dental
+#: view:dental.medicament:0
+#: field:dental.medicament,adverse_reaction:0
+#: field:dental.patient.medication,adverse_reaction:0
+msgid "Adverse Reactions"
+msgstr "Reacciones Adversas"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d37:0
+msgid "37"
+msgstr "37"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d36:0
+msgid "36"
+msgstr "36"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d35:0
+msgid "35"
+msgstr "35"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d34:0
+msgid "34"
+msgstr "34"
+
+#. module: Dental
+#: help:dental.medicament,presentation:0
+msgid "Packaging"
+msgstr "Empaque"
+
+#. module: Dental
+#: field:dental.insurance,name:0
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: Dental
+#: field:dental.prescription.order,user_id:0
+msgid "Prescribing Doctor"
+msgstr "doctor que Receta"
+
+#. module: Dental
+#: field:dental.insurance,category:0
+msgid "Category"
+msgstr "Categoría"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,user_id:0
+#: field:dental.patient.evaluation,user_id:0
+#: field:res.partner,is_doctor:0
+msgid "Doctor"
+msgstr "Doctor"
+
+#. module: Dental
+#: field:dental.patient,evaluation_ids:0
+msgid "Evaluation"
+msgstr "Evaluación"
+
+#. module: Dental
+#: field:dental.insurance,member_exp:0
+#: field:dental.vaccination,vaccine_expiration_date:0
+msgid "Expiration date"
+msgstr "Fecha de expiración"
+
+#. module: Dental
+#: field:dental.appointment,validity_status:0
+msgid "Status"
+msgstr "Estado"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_physician_line
+msgid "Information about doctor availability"
+msgstr "Información sobre la disponibilidad médico"
+
+#. module: Dental
+#: help:dental.speciality,code:0
+msgid "ie, ADP"
+msgstr "ie, ADP"
+
+#. module: Dental
+#: view:dental.physician:0
+msgid "Weekly Availability"
+msgstr "disponibilidad Semanal"
+
+#. module: Dental
+#: view:dental.medicament:0
+msgid "Search Medicament"
+msgstr "Buscar Medicamento"
+
+#. module: Dental
+#: help:dental.vaccination,institution:0
+msgid "Medical Center where the patient is being or was vaccinated"
+msgstr "Centro Médico donde se está o ha sido vacunado el paciente"
+
+#. module: Dental
+#: code:addons/Dental/medical_invoice/wizard/wizard_appointment_invoice.py:28
+#, python-format
+msgid "The appointment is invoice exempt"
+msgstr "La cita es de factura exenta"
+
+#. module: Dental
+#: field:dental.physician.line,end_time:0
+msgid "End Time"
+msgstr "Hora de finalización"
+
+#. module: Dental
+#: help:product.product,is_bed:0
+msgid "Check if the product is a bed on the medical center"
+msgstr "Compruebe si el producto es una cama en el centro médico"
+
+#. module: Dental
+#: help:dental.patient,general_info:0
+msgid "General information about the patient"
+msgstr "Información general sobre el paciente"
+
+#. module: Dental
+#: selection:dental.physician.line,name:0
+msgid "Wednesday"
+msgstr "Miércoles"
+
+#. module: Dental
+#: field:product.product,is_bed:0
+msgid "Bed"
+msgstr "cama"
+
+#. module: Dental
+#: field:res.partner,is_person:0
+msgid "Person"
+msgstr "Persona"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_appointment_invoice
+msgid "dental.appointment.invoice"
+msgstr "dental.appointment.invoice"
+
+#. module: Dental
+#: help:dental.patient,identifier:0
+msgid "Social Security Number or National ID"
+msgstr "Número de Seguro Social o de identificación nacional"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_medicament
+msgid "dental.medicament"
+msgstr "dental.medicament"
+
+#. module: Dental
+#: help:dental.medicament,active_component:0
+msgid "Active Component"
+msgstr "Componente activo"
+
+#. module: Dental
+#: field:dental.patient,marital_status:0
+msgid "Marital Status"
+msgstr "Estado civil"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient.disease,name:0
+#: field:dental.patient.evaluation,name:0
+#: field:dental.patient.medication,name:0
+#: field:dental.prescription.order,name:0
+#: field:dental.vaccination,name:0
+msgid "Patient ID"
+msgstr "Identificación del Paciente"
+
+#. module: Dental
+#: help:dental.physician,code:0
+msgid "MD License ID"
+msgstr "MD ID License"
+
+#. module: Dental
+#: field:dental.patient.evaluation,height:0
+msgid "Height (cm)"
+msgstr "Altura (cm)"
+
+#. module: Dental
+#: view:dental.medicament:0
+#: field:dental.medicament,storage:0
+msgid "Storage Conditions"
+msgstr "Condiciones de almacenamiento"
+
+#. module: Dental
+#: selection:dental.patient.disease,allergy_type:0
+msgid "Misc Allergy"
+msgstr "Otra Alergia"
+
+#. module: Dental
+#: view:dental.medicament:0
+#: field:dental.medicament,composition:0
+msgid "Composition"
+msgstr "Composición"
+
+#. module: Dental
+#: model:ir.actions.act_window,name:Dental.dental_action_tree_medicament
+#: model:ir.ui.menu,name:Dental.dental_edit_medicament
+msgid "Medicaments"
+msgstr "Medicamentos"
+
+#. module: Dental
+#: help:res.partner,is_patient:0
+msgid "Check if the partner is a patient"
+msgstr "Marque si el socio es un paciente"
+
+#. module: Dental
+#: field:dental.patient,prescriptions:0
+msgid "Prescriptions"
+msgstr "Recetas"
+
+#. module: Dental
+#: field:dental.appointment,consultations:0
+msgid "Consultation Service"
+msgstr "Servicio de Consulta"
+
+#. module: Dental
+#: code:addons/Dental/medical_invoice/wizard/wizard_appointment_invoice.py:34
+#, python-format
+msgid "Appointment already invoiced"
+msgstr "Nombramiento ya facturado"
+
+#. module: Dental
+#: field:product.product,is_vaccine:0
+msgid "Vaccine"
+msgstr "Vacuna"
+
+#. module: Dental
+#: help:dental.medication.template,common_dosage:0
+#: help:dental.patient.medication,common_dosage:0
+msgid "Common / standard dosage frequency for this medicament"
+msgstr "Frecuencia de la dosis común  para este medicamento"
+
+#. module: Dental
+#: field:res.partner,alias:0
+msgid "Alias"
+msgstr "Alias"
+
+#. module: Dental
+#: view:dental.patient:0
+msgid "Medication History"
+msgstr "Historial de medicamentos"
+
+#. module: Dental
+#: help:dental.medication.template,duration:0
+#: help:dental.medication.template,duration_period:0
+#: help:dental.patient.medication,duration:0
+#: help:dental.patient.medication,duration_period:0
+msgid "Period that the patient must take the medication. in minutes, hours, days, months, years or indefinately"
+msgstr "Período que el paciente debe tomar la medicación. en minutos, horas, días, meses, años o indefinidamente"
+
+#. module: Dental
+#: selection:dental.patient.disease,status:0
+msgid "improving"
+msgstr "mejorar"
+
+#. module: Dental
+#: field:dental.patient.disease,is_active:0
+msgid "Active disease"
+msgstr "enfermedad activa"
+
+#. module: Dental
+#: help:dental.speciality,name:0
+msgid "ie, Addiction Psychiatry"
+msgstr "es decir, la adicción Psiquiatría"
+
+#. module: Dental
+#: view:dental.patient:0
+msgid "Patient Extra Information"
+msgstr "Paciente Información adicional"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_patient
+msgid "Patient related information"
+msgstr "Información relacionada con el paciente"
+
+#. module: Dental
+#: field:dental.patient.evaluation,weight:0
+msgid "Weight (kg)"
+msgstr "Peso (kg)"
+
+#. module: Dental
+#: view:dental.patient.medication:0
+msgid "Specific Dosage"
+msgstr "Dosis específica"
+
+#. module: Dental
+#: field:dental.patient.evaluation,index_plaque:0
+msgid "Dental Plaque Index"
+msgstr " índice de placa Dental"
+
+#. module: Dental
+#: field:dental.patient.disease,treatment_description:0
+msgid "Treatment Description"
+msgstr "Tratamiento Descripción"
+
+#. module: Dental
+#: help:dental.appointment,patient:0
+#: view:dental.patient:0
+#: help:dental.patient,name:0
+msgid "Patient Name"
+msgstr "Nombre del Paciente"
+
+#. module: Dental
+#: selection:dental.medication.template,duration_period:0
+#: selection:dental.patient.medication,duration_period:0
+msgid "years"
+msgstr "Años"
+
+#. module: Dental
+#: field:dental.physician,info:0
+msgid "Extra info"
+msgstr "Información Extra"
+
+#. module: Dental
+#: help:dental.patient,receivable:0
+msgid "Total amount this patient owes you"
+msgstr "Importe total este paciente le debe"
+
+#. module: Dental
+#: field:dental.patient,rh:0
+msgid "Rh"
+msgstr "Rh"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d24:0
+msgid "24"
+msgstr "24"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d25:0
+msgid "25"
+msgstr "25"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d26:0
+msgid "26"
+msgstr "26"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d27:0
+msgid "27"
+msgstr "27"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d21:0
+msgid "21"
+msgstr "21"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_patient_medication
+msgid "Patient Medication"
+msgstr "Medicación del Paciente"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d23:0
+msgid "23"
+msgstr "23"
+
+#. module: Dental
+#: model:ir.ui.menu,name:Dental.dental_menu
+#: model:ir.ui.menu,name:Dental.main_menu_dental
+msgid "Dental"
+msgstr "Dental"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d28:0
+msgid "28"
+msgstr "28"
+
+#. module: Dental
+#: selection:dental.medication.template,frequency_unit:0
+#: selection:dental.patient.medication,frequency_unit:0
+msgid "weeks"
+msgstr "Semanas"
+
+#. module: Dental
+#: field:dental.patient,current_address:0
+msgid "Address"
+msgstr "Direccion"
+
+#. module: Dental
+#: code:addons/Dental/medical_invoice/wizard/wizard_appointment_invoice.py:28
+#: code:addons/Dental/medical_invoice/wizard/wizard_appointment_invoice.py:32
+#: code:addons/Dental/medical_invoice/wizard/wizard_appointment_invoice.py:34
+#: code:addons/Dental/medical_invoice/wizard/wizard_appointment_invoice.py:37
+#: code:addons/Dental/medical_invoice/wizard/wizard_appointment_invoice.py:39
+#: code:addons/Dental/medical_invoice/wizard/wizard_appointment_invoice.py:68
+#: code:addons/Dental/medical_invoice/wizard/wizard_appointment_invoice.py:93
+#, python-format
+msgid "UserError"
+msgstr "UserError"
+
+#. module: Dental
+#: model:ir.ui.menu,name:Dental.Citas_menu
+msgid "Citas"
+msgstr "Citas"
+
+#. module: Dental
+#: field:dental.medication.dosage,abbreviation:0
+msgid "Abbreviation"
+msgstr "Abreviatura"
+
+#. module: Dental
+#: field:dental.patient.disease,pregnancy_warning:0
+msgid "Pregnancy warning"
+msgstr "advertencia Embarazo"
+
+#. module: Dental
+#: selection:dental.patient.disease,disease_severity:0
+msgid "Mild"
+msgstr "Suave"
+
+#. module: Dental
+#: field:dental.patient.evaluation,next_evaluation:0
+msgid "Next Appointment"
+msgstr "próxima cita"
+
+#. module: Dental
+#: help:dental.patient,current_address:0
+msgid "Contact information. You may choose from the different contacts and addresses this patient has"
+msgstr "Información del contacto. Usted puede elegir entre los diferentes contactos y direcciones de este paciente tiene"
+
+#. module: Dental
+#: model:ir.actions.act_window,name:Dental.dental_action_form_evaluation
+msgid "Patient Evaluation"
+msgstr "Evaluación del paciente"
+
+#. module: Dental
+#: model:ir.actions.act_window,name:Dental.dental_action_form_physician
+#: model:ir.ui.menu,name:Dental.dental_conf_physician_list
+msgid "Physicians"
+msgstr "Médicos"
+
+#. module: Dental
+#: model:ir.actions.act_window,help:Dental.dental_patient_action_tree
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new patient.\n"
+"              </p><p>\n"
+"                With just a quick glance on the OpenERP patient screen, you\n"
+"                can easily find all the information you need for each patients;\n"
+"                persona information, medical history, vaccination history, etc.\n"
+"              </p>\n"
+"            "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"               Haga clic para añadir un nuevo paciente.\n"
+"              </p><p>\n"
+"               Con sólo un vistazo rápido en la pantalla paciente OpenERP, que\n"
+"                puede encontrar fácilmente toda la información que necesita para cada paciente;\n"
+"               información persona, historial médico, antecedentes de vacunación, etc\n"
+"              </p>\n"
+"            "
+
+#. module: Dental
+#: field:dental.medicament,dosage:0
+msgid "Dosage Instructions"
+msgstr "Pautas posológicas"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_insurance
+msgid "dental.insurance"
+msgstr "dental.insurance"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_patient_evaluation
+msgid "evaluation"
+msgstr "evaluación"
+
+#. module: Dental
+#: view:dental.patient.medication:0
+msgid "Common Dosage"
+msgstr "Dosis Común"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: Dental
+#: field:dental.insurance,type:0
+msgid "Insurance Type"
+msgstr "Tipo de seguro"
+
+#. module: Dental
+#: selection:dental.patient,sex:0
+msgid "Male"
+msgstr "Hombre"
+
+#. module: Dental
+#: field:dental.medication.template,duration:0
+#: field:dental.patient.medication,duration:0
+msgid "Treatment duration"
+msgstr "Duración del tratamiento"
+
+#. module: Dental
+#: view:dental.patient:0
+#: view:dental.patient.medication:0
+msgid "Medication"
+msgstr "Medicación"
+
+#. module: Dental
+#: field:dental.appointment,speciality:0
+#: field:dental.physician,speciality:0
+msgid "Speciality"
+msgstr "Especialidad"
+
+#. module: Dental
+#: field:dental.appointment,photo:0
+msgid "Photo"
+msgstr "foto"
+
+#. module: Dental
+#: selection:dental.medication.template,duration_period:0
+#: selection:dental.medication.template,frequency_unit:0
+#: selection:dental.patient.medication,duration_period:0
+#: selection:dental.patient.medication,frequency_unit:0
+msgid "days"
+msgstr "días"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,identifier:0
+msgid "SSN"
+msgstr "SSN"
+
+#. module: Dental
+#: sql_constraint:dental.vaccination:0
+msgid "This vaccine dose has been given already to the patient "
+msgstr "Esta dosis de vacuna se ha dado ya al paciente"
+
+#. module: Dental
+#: help:dental.medicament,dosage:0
+msgid "Dosage / Indications"
+msgstr "Dosis / Indicaciones"
+
+#. module: Dental
+#: help:dental.patient.medication,doctor:0
+msgid "Physician who prescribed the medicament"
+msgstr "Médico que le recetó el medicamento"
+
+#. module: Dental
+#: selection:dental.patient,marital_status:0
+msgid "Separated"
+msgstr "separado"
+
+#. module: Dental
+#: view:dental.patient:0
+msgid "Blood Group:"
+msgstr "Grupo sanguíneo:"
+
+#. module: Dental
+#: selection:dental.physician.line,name:0
+msgid "Monday"
+msgstr "Lunes"
+
+#. module: Dental
+#: help:dental.patient,primary_care_doctor:0
+msgid "Current primary care / family doctor"
+msgstr "Actual de atención / médico de familia primaria"
+
+#. module: Dental
+#: help:dental.dent,image_mediun:0
+msgid "Small-sized image of the product. It is automatically resized as a 64x64px image, with aspect ratio preserved, only when the image exceeds one of those sizes. Use this field in form views or some kanban views."
+msgstr "Imagen de tamaño del producto. Se cambia de tamaño automáticamente como imagen 64x64px con relación de aspecto conservado, sólo cuando la imagen es superior a uno de esos tamaños. Utilice este campo en las vistas de formulario o algunos puntos de vista kanban."
+
+#. module: Dental
+#: field:dental.vaccination,date:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: Dental
+#: view:dental.patient:0
+msgid "Patient Critical Information"
+msgstr "Información crítica del paciente "
+
+#. module: Dental
+#: help:dental.medication.template,dose:0
+#: help:dental.patient.medication,dose:0
+msgid "Amount of medication (eg, 250 mg ) each time the patient takes it"
+msgstr "Importe de la medicación (por ejemplo, 250 mg) cada vez que el paciente toma"
+
+#. module: Dental
+#: help:dental.vaccination,vaccine:0
+msgid "Vaccine Name. Make sure that the vaccine (product) has all the proper information at product level. Information such as provider, supplier code, tracking number, etc.. This information must always be present. If available, please copy / scan the vaccine leaflet and attach it to this record"
+msgstr "Nombre vacuna. Asegúrese de que la vacuna (producto) tiene toda la información adecuada a nivel de producto. Información como proveedor, código de proveedor, número de seguimiento, etc .. Esta información debe estar siempre presente. Si está disponible, por favor, copie / escanear el prospecto de la vacuna y adjuntarlo a este registro"
+
+#. module: Dental
+#: field:dental.patient.medication,discontinued:0
+msgid "Discontinued"
+msgstr "interrumpidas"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d11:0
+msgid "11"
+msgstr "11"
+
+#. module: Dental
+#: field:dental.patient,primary_care_doctor:0
+msgid "Primary Care Doctor"
+msgstr "Médico de Atención Primaria"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d13:0
+msgid "13"
+msgstr "13"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d12:0
+msgid "12"
+msgstr "12"
+
+#. module: Dental
+#: help:dental.patient,current_insurance:0
+msgid "Insurance information. You may choose from the different insurances belonging to the patient"
+msgstr "Información del seguro. Usted puede elegir entre los diferentes seguros que pertenecen a la paciente"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d14:0
+msgid "14"
+msgstr "14"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d17:0
+msgid "17"
+msgstr "17"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d16:0
+msgid "16"
+msgstr "16"
+
+#. module: Dental
+#: help:dental.patient,critical_info:0
+msgid "Write any important information on the patient's disease, surgeries, allergies, ..."
+msgstr "Escribe cualquier información importante sobre la enfermedad del paciente, cirugías, alergias, ..."
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d18:0
+msgid "18"
+msgstr "18"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,sex:0
+msgid "Sex"
+msgstr "Sexo"
+
+#. module: Dental
+#: field:dental.medication.dosage,name:0
+#: field:dental.medication.template,common_dosage:0
+#: field:dental.medication.template,frequency:0
+#: field:dental.patient.medication,common_dosage:0
+#: field:dental.patient.medication,frequency:0
+msgid "Frequency"
+msgstr "Frecuencia"
+
+#. module: Dental
+#: field:dental.patient.evaluation,evaluation_endtime:0
+msgid "End of Evaluation"
+msgstr "Fin de la Evaluación"
+
+#. module: Dental
+#: field:dental.patient.medication,course_completed:0
+msgid "Course Completed"
+msgstr "Curso Completo"
+
+#. module: Dental
+#: field:dental.patient,receivable:0
+msgid "Receivable"
+msgstr "cobrar"
+
+#. module: Dental
+#: view:dental.appointment:0
+msgid "Information"
+msgstr "Información"
+
+#. module: Dental
+#: help:dental.physician,speciality:0
+msgid "Speciality Code"
+msgstr "Código de Especialidad"
+
+#. module: Dental
+#: field:dental.medicament,active_component:0
+msgid "Active component"
+msgstr "componente activo"
+
+#. module: Dental
+#: field:dental.medication.template,start_treatment:0
+#: field:dental.patient.disease,date_start_treatment:0
+#: field:dental.patient.medication,start_treatment:0
+msgid "Start of treatment"
+msgstr "Inicio del tratamiento"
+
+#. module: Dental
+#: view:dental.appointment:0
+#: model:ir.actions.act_window,name:Dental.action_create_appointment_invoice
+msgid "Create Invoice"
+msgstr "crear factura"
+
+#. module: Dental
+#: field:dental.prescription.order,notes:0
+msgid "Prescription Notes"
+msgstr "Notas receta"
+
+#. module: Dental
+#: help:dental.physician,name:0
+msgid "Physician's Name, from the partner list"
+msgstr "Nombre del médico, de la lista de socios"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,diseases:0
+msgid "Diseases"
+msgstr "Enfermedades"
+
+#. module: Dental
+#: field:dental.medicament,price:0
+msgid "Price"
+msgstr "Precio"
+
+#. module: Dental
+#: field:dental.physician.line,start_time:0
+msgid "Start Time"
+msgstr "Hora de inicio"
+
+#. module: Dental
+#: help:product.product,is_medicament:0
+msgid "Check if the product is a medicament"
+msgstr "Compruebe si el producto es un medicamento"
+
+#. module: Dental
+#: selection:dental.patient.disease,status:0
+msgid "worsening"
+msgstr "empeorando"
+
+#. module: Dental
+#: help:res.partner,relationship:0
+msgid "Include the relationship with the patient - friend, co-worker, brother, ...- "
+msgstr "Incluya la relación con el paciente - amigo, compañero de trabajo, hermano, ...-"
+
+#. module: Dental
+#: view:dental.medicament:0
+msgid "medicaments"
+msgstr "medicamentos"
+
+#. module: Dental
+#: field:dental.dent,name:0
+#: field:dental.medicament,name:0
+#: field:dental.vaccination,vaccine:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: Dental
+#: selection:dental.patient.evaluation,evaluation_type:0
+msgid "normal"
+msgstr "normal"
+
+#. module: Dental
+#: help:dental.medication.template,medicament:0
+#: help:dental.patient.medication,medicament:0
+msgid "Prescribed Medicament"
+msgstr "medicamento que se prescriba"
+
+#. module: Dental
+#: view:dental.appointment.invoice:0
+msgid "Do you want to create the invoice(s) ?"
+msgstr "¿Quieres crear la factura (s)?"
+
+#. module: Dental
+#: model:ir.actions.act_window,name:Dental.dental_action_report_medicament
+#: model:ir.ui.menu,name:Dental.dental_list_medicament
+msgid "Medicament List"
+msgstr "Lista medicamento"
+
+#. module: Dental
+#: view:dental.patient:0
+msgid "Search Patients"
+msgstr "Los pacientes de la búsqueda"
+
+#. module: Dental
+#: help:product.product,is_vaccine:0
+msgid "Check if the product is a vaccine"
+msgstr "Marque si el producto es una vacuna"
+
+#. module: Dental
+#: view:dental.patient:0
+msgid "DOB:"
+msgstr "Fecha de Nacimiento:"
+
+#. module: Dental
+#: code:addons/Dental/medical_invoice/wizard/wizard_appointment_invoice.py:32
+#, python-format
+msgid "At least one of the selected appointments is already invoiced"
+msgstr "Al menos una de las citas seleccionadas ya se factura"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_ethnicity
+msgid "dental.ethnicity"
+msgstr "dental.ethnicity"
+
+#. module: Dental
+#: field:dental.patient.evaluation,notes_complaint:0
+msgid "Complaint details"
+msgstr "detalles de Quejas"
+
+#. module: Dental
+#: selection:dental.patient,marital_status:0
+msgid "Single"
+msgstr "Individual"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_medication_template
+msgid "Template for medication"
+msgstr "Plantilla para la medicación"
+
+#. module: Dental
+#: selection:dental.physician.line,name:0
+msgid "Saturday"
+msgstr "Sábado"
+
+#. module: Dental
+#: field:dental.patient.disease,disease_severity:0
+msgid "Severity"
+msgstr "Severidad"
+
+#. module: Dental
+#: field:dental.insurance,company:0
+msgid "Insurance Company"
+msgstr "Compañia de Seguros"
+
+#. module: Dental
+#: field:dental.appointment,comments:0
+msgid "Comments"
+msgstr "Comentarios"
+
+#. module: Dental
+#: view:dental.patient:0
+msgid "Group By..."
+msgstr "Agrupar por ..."
+
+#. module: Dental
+#: selection:dental.patient.evaluation,evaluation_type:0
+msgid "Emergencia"
+msgstr "Emergencia"
+
+#. module: Dental
+#: view:dental.physician:0
+msgid "Physician Information"
+msgstr "Información del médico"
+
+#. module: Dental
+#: field:dental.medicament,pregnancy:0
+msgid "Pregnancy and Lactancy"
+msgstr "Embarazo y Lactancia"
+
+#. module: Dental
+#: help:dental.medication.dosage,code:0
+msgid "Dosage Code, such as SNOMED, 229798009 = 3 times per day"
+msgstr "Código de dosificación, tales como SNOMED, 229798009 = 3 veces por día"
+
+#. module: Dental
+#: code:addons/Dental/medical_invoice/wizard/wizard_appointment_invoice.py:39
+#, python-format
+msgid "You can not invoice this appointment"
+msgstr "No se puede facturar este nombramiento"
+
+#. module: Dental
+#: field:dental.vaccination,dose:0
+msgid "Dose Number"
+msgstr "Número de dosis"
+
+#. module: Dental
+#: help:dental.patient.disease,is_infectious:0
+msgid "Check if the patient has an infectious / transmissible disease"
+msgstr "Compruebe si el paciente tiene una enfermedad infecciosa / transmisible"
+
+#. module: Dental
+#: help:dental.medicament,therapeutic_action:0
+msgid "Therapeutic action"
+msgstr "acción terapéutica"
+
+#. module: Dental
+#: field:dental.patient.evaluation,notes:0
+#: view:dental.patient.medication:0
+msgid "Notes"
+msgstr "Notas"
+
+#. module: Dental
+#: selection:dental.patient.disease,allergy_type:0
+msgid "Drug Allergy"
+msgstr "Alergia a Medicamentos"
+
+#. module: Dental
+#: field:dental.ethnicity,code:0
+#: field:dental.medication.dosage,code:0
+#: field:dental.speciality,code:0
+msgid "Code"
+msgstr "Código"
+
+#. module: Dental
+#: help:dental.patient,user_id:0
+msgid "Physician that logs in the local Medical system (HIS), on the health center. It doesn't necesarily has do be the same as the Primary Care doctor"
+msgstr "Médico que registra en el sistema médico local (HIS), en el centro de salud. No hace necesarily tiene do ser el mismo que el médico de Atención Primaria"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d15:0
+msgid "15"
+msgstr "15"
+
+#. module: Dental
+#: view:dental.appointment:0
+msgid "Appointment Information"
+msgstr "Información sobre la entrevista"
+
+#. module: Dental
+#: view:dental.appointment.invoice:0
+msgid "Create Invoices"
+msgstr "crear Facturas"
+
+#. module: Dental
+#: field:dental.dent,image_mediun:0
+msgid "mediun-sized image"
+msgstr "imagen-tamaño Medio"
+
+#. module: Dental
+#: field:dental.insurance,notes:0
+#: view:dental.medicament:0
+#: field:dental.medicament,notes:0
+#: field:dental.patient.disease,extra_info:0
+#: field:dental.patient.medication,notes:0
+#: view:dental.physician:0
+msgid "Extra Info"
+msgstr "Información Extra"
+
+#. module: Dental
+#: selection:dental.patient,sex:0
+msgid "Female"
+msgstr "Mujer"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_speciality
+msgid "dental.speciality"
+msgstr "dental.speciality"
+
+#. module: Dental
+#: field:dental.patient,medications:0
+msgid "Medications"
+msgstr "Medicamentos"
+
+#. module: Dental
+#: view:dental.patient.evaluation:0
+msgid "Evaluation Summary"
+msgstr "resumido de la evaluación"
+
+#. module: Dental
+#: field:dental.ethnicity,name:0
+#: field:dental.patient,ethnic_group:0
+msgid "Ethnic group"
+msgstr "grupo étnico"
+
+#. module: Dental
+#: help:dental.patient.medication,is_active:0
+msgid "Check this option if the patient is currently taking the medication"
+msgstr "Marque esta opción si el paciente está tomando la medicación"
+
+#. module: Dental
+#: sql_constraint:dental.speciality:0
+msgid "The Medical Speciality code must be unique"
+msgstr "El código de Especialidad Médica debe ser único"
+
+#. module: Dental
+#: field:dental.appointment,name:0
+msgid "Appointment ID"
+msgstr "ID Cita"
+
+#. module: Dental
+#: field:dental.patient,blood_type:0
+msgid "Blood Type"
+msgstr "Tipo de sangre"
+
+#. module: Dental
+#: field:dental.patient.disease,is_on_treatment:0
+msgid "Currently on Treatment"
+msgstr "Actualmente el tratamiento"
+
+#. module: Dental
+#: help:dental.patient,patient_id:0
+msgid "Patient Identifier provided by the Health Center. Is not the patient id from the partner form"
+msgstr "Identificador para el paciente que el Centro de Salud. No es la identificación del paciente de forma pareja"
+
+#. module: Dental
+#: help:dental.patient.medication,discontinued_reason:0
+msgid "Short description for discontinuing the treatment"
+msgstr "Breve descripción de la interrupción del tratamiento"
+
+#. module: Dental
+#: field:dental.medicament,qty_available:0
+msgid "Quantity Available"
+msgstr "Cantidad"
+
+#. module: Dental
+#: view:dental.patient:0
+#: view:dental.patient.evaluation:0
+msgid "Evaluations"
+msgstr "Evaluaciones"
+
+#. module: Dental
+#: help:dental.patient.disease,short_comment:0
+msgid "Brief, one-line remark of the disease. Longer description will go on the Extra info field"
+msgstr "Breve, de una sola línea de observación de la enfermedad. Descripción más larga irá en el campo de información adicional"
+
+#. module: Dental
+#: view:dental.appointment.invoice:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d22:0
+msgid "22"
+msgstr "22"
+
+#. module: Dental
+#: selection:dental.medication.template,duration_period:0
+#: selection:dental.medication.template,frequency_unit:0
+#: selection:dental.patient.medication,duration_period:0
+#: selection:dental.patient.medication,frequency_unit:0
+msgid "minutes"
+msgstr "minutos"
+
+#. module: Dental
+#: field:dental.patient.disease,weeks_of_pregnancy:0
+msgid "Contracted in pregnancy week #"
+msgstr "Contratado en el embarazo semana #"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_medication_dosage
+msgid "Medicament Common Dosage combinations"
+msgstr "Medicamentos combinaciones comunes de dosificación"
+
+#. module: Dental
+#: selection:dental.patient.disease,allergy_type:0
+msgid "Misc Contraindication"
+msgstr "Otra contraindicación"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_prescription_order
+msgid "prescription order"
+msgstr "orden de prescripción"
+
+#. module: Dental
+#: field:dental.patient.disease,age:0
+msgid "Age when diagnosed"
+msgstr "Edad al momento del diagnóstico"
+
+#. module: Dental
+#: field:dental.medication.template,duration_period:0
+#: field:dental.patient.medication,duration_period:0
+msgid "Treatment period"
+msgstr "período de tratamiento"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_vaccination
+msgid "dental.vaccination"
+msgstr "dental.vaccination"
+
+#. module: Dental
+#: selection:dental.patient.disease,disease_severity:0
+msgid "Moderate"
+msgstr "Moderado"
+
+#. module: Dental
+#: help:dental.medication.template,qty:0
+#: help:dental.patient.medication,qty:0
+msgid "Quantity of units (eg, 2 capsules) of the medicament"
+msgstr "Cantidad de unidades (por ejemplo, 2 cápsulas) del medicamento"
+
+#. module: Dental
+#: view:dental.appointment:0
+msgid "Appointment"
+msgstr "Cita"
+
+#. module: Dental
+#: field:dental.patient.medication,is_active:0
+msgid "Active"
+msgstr "Activo"
+
+#. module: Dental
+#: help:dental.vaccination,vaccine_lot:0
+msgid "Please check on the vaccine (product) production lot number and tracking number when available !"
+msgstr "Por favor verifique en la vacuna (producto) número de lote de producción y el número de seguimiento cuando esté disponible!"
+
+#. module: Dental
+#: field:dental.medicament,pregnancy_warning:0
+msgid "Pregnancy Warning"
+msgstr "Advertencia por el embarazo"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_physician
+msgid "Information about the doctor"
+msgstr "Información sobre el médico"
+
+#. module: Dental
+#: help:dental.medicament,indications:0
+msgid "Indications"
+msgstr "Indicaciones"
+
+#. module: Dental
+#: field:dental.prescription.order,prescription_id:0
+msgid "Prescription ID"
+msgstr "ID Prescription"
+
+#. module: Dental
+#: field:dental.insurance,number:0
+msgid "Number"
+msgstr "Número"
+
+#. module: Dental
+#: help:dental.patient.evaluation,derived_to:0
+msgid "Physician to whom escalate / derive the case"
+msgstr "Médico a quien escalar / derivar el caso"
+
+#. module: Dental
+#: field:res.partner,lastname:0
+#: help:res.partner,lastname:0
+msgid "Last Name"
+msgstr "Apellido"
+
+#. module: Dental
+#: view:dental.patient:0
+msgid "Sex:"
+msgstr "Sexo:"
+
+#. module: Dental
+#: selection:dental.physician.line,name:0
+msgid "Tuesday"
+msgstr "Martes"
+
+#. module: Dental
+#: field:dental.patient.disease,allergy_type:0
+msgid "Allergy type"
+msgstr "Tipo de Alergia"
+
+#. module: Dental
+#: help:dental.medicament,name:0
+msgid "Commercial Name"
+msgstr "Nombre Comercial"
+
+#. module: Dental
+#: field:dental.dent,image:0
+msgid "pics"
+msgstr "fotos"
+
+#. module: Dental
+#: help:dental.patient.evaluation,glycemia:0
+msgid "Last blood glucose level. Can be approximative."
+msgstr "Última nivel de glucosa en sangre. Puede ser aproximativo."
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: Dental
+#: field:dental.patient.disease,status:0
+msgid "Status of the disease"
+msgstr "Situación de la enfermedad"
+
+#. module: Dental
+#: selection:dental.patient.disease,status:0
+msgid "status quo"
+msgstr "status quo"
+
+#. module: Dental
+#: field:dental.patient,lastname:0
+msgid "Lastname"
+msgstr "Apellido"
+
+#. module: Dental
+#: help:dental.medication.template,admin_times:0
+#: help:dental.patient.medication,admin_times:0
+msgid "Suggested administration hours. For example, at 08:00, 13:00 and 18:00 can be encoded like 08 13 18"
+msgstr "Hora de administración sugeridos. Por ejemplo, a las 08:00, 13:00 y 18:00 se pueden codificar como 08 13 18"
+
+#. module: Dental
+#: view:dental.patient.evaluation:0
+msgid "Fotografia"
+msgstr "Fotografía"
+
+#. module: Dental
+#: field:dental.prescription.order,prescription_line:0
+msgid "Prescription line"
+msgstr "línea de la prescripción"
+
+#. module: Dental
+#: field:dental.patient.disease,short_comment:0
+msgid "Remarks"
+msgstr "Observaciones"
+
+#. module: Dental
+#: selection:dental.insurance,type:0
+msgid "Labour Union / Syndical"
+msgstr "Sindicato de Trabajadores / Sindical"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_appointment
+msgid "dental.appointment"
+msgstr "dental.appointment"
+
+#. module: Dental
+#: field:dental.medicament,overdosage:0
+#: help:dental.medicament,overdosage:0
+msgid "Overdosage"
+msgstr "Sobredosis"
+
+#. module: Dental
+#: view:product.product:0
+msgid "Medical"
+msgstr "Médico"
+
+#. module: Dental
+#: field:dental.medicament,indications:0
+msgid "Indication"
+msgstr "Indicación"
+
+#. module: Dental
+#: field:dental.patient,age:0
+msgid "Patient Age"
+msgstr "Edad del paciente"
+
+#. module: Dental
+#: field:dental.insurance,member_since:0
+msgid "Member since"
+msgstr "miembro desde"
+
+#. module: Dental
+#: field:dental.patient,patient_id:0
+#: field:dental.physician,code:0
+msgid "ID"
+msgstr "ID"
+
+#. module: Dental
+#: selection:dental.patient,marital_status:0
+msgid "Widowed"
+msgstr "viudo"
+
+#. module: Dental
+#: help:dental.physician,institution:0
+msgid "Instituion where she/he works"
+msgstr "Instituion donde ella / él trabaja"
+
+#. module: Dental
+#: help:res.partner,is_institution:0
+msgid "Check if the partner is a Medical Center"
+msgstr "Marque si el socio es un Centro Médico"
+
+#. module: Dental
+#: help:dental.patient.evaluation,evaluation_date:0
+msgid "Enter or select the date / ID of the appointment related to this evaluation"
+msgstr "Introduzca o seleccione la fecha / ID de la cita relacionada con esta evaluación"
+
+#. module: Dental
+#: selection:dental.physician.line,name:0
+msgid "Sunday"
+msgstr "Domingo"
+
+#. module: Dental
+#: field:dental.patient.evaluation,evaluation_type:0
+msgid "Evaluation Type"
+msgstr "Tipo de evaluación"
+
+#. module: Dental
+#: selection:dental.patient.disease,allergy_type:0
+msgid "Food Allergy"
+msgstr "Alergias a los Alimentos"
+
+#. module: Dental
+#: view:dental.patient:0
+msgid "Patient Information"
+msgstr "Información del Paciente"
+
+#. module: Dental
+#: selection:dental.physician.line,name:0
+msgid "Friday"
+msgstr "Viernes"
+
+#. module: Dental
+#: field:dental.patient.evaluation,chief_complaint:0
+#: help:dental.patient.evaluation,chief_complaint:0
+msgid "Chief Complaint"
+msgstr "Queja Principal"
+
+#. module: Dental
+#: field:dental.physician,institution:0
+#: field:dental.vaccination,institution:0
+#: field:res.partner,is_institution:0
+msgid "Institution"
+msgstr "Institución"
+
+#. module: Dental
+#: view:dental.appointment.invoice:0
+msgid "Create invoices"
+msgstr "crear facturas"
+
+#. module: Dental
+#: selection:dental.medication.template,frequency_unit:0
+#: selection:dental.patient.medication,frequency_unit:0
+msgid "when required"
+msgstr "cuando sea necesario"
+
+#. module: Dental
+#: selection:dental.patient,marital_status:0
+msgid "Married"
+msgstr "casado"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_dent
+msgid "dental.dent"
+msgstr "dental.dent"
+
+#. module: Dental
+#: help:dental.medicament,composition:0
+msgid "Components"
+msgstr "Componentes"
+
+#. module: Dental
+#: field:dental.medication.template,medicament:0
+#: field:dental.patient.medication,medicament:0
+#: field:product.product,is_medicament:0
+msgid "Medicament"
+msgstr "Medicamento"
+
+#. module: Dental
+#: field:dental.appointment,appointment_validity_date:0
+msgid "Validity Date"
+msgstr "Fecha Validez"
+
+#. module: Dental
+#: view:dental.medicament:0
+msgid "Pregnancy / Lactancy"
+msgstr "Embarazo / Lactancia"
+
+#. module: Dental
+#: help:dental.appointment,doctor:0
+msgid "Physician's Name"
+msgstr "Nombre del médico"
+
+#. module: Dental
+#: help:dental.prescription.order,prescription_id:0
+msgid "Type in the ID of this prescription"
+msgstr "Escriba el ID de esta receta"
+
+#. module: Dental
+#: field:dental.prescription.order,pharmacy:0
+msgid "Pharmacy"
+msgstr "Farmacia"
+
+#. module: Dental
+#: field:dental.vaccination,vaccine_lot:0
+msgid "Lot Number"
+msgstr "Número de lote"
+
+#. module: Dental
+#: help:dental.appointment,speciality:0
+msgid "Medical Speciality / Sector"
+msgstr "Especialidad Médica / Sector"
+
+#. module: Dental
+#: help:dental.patient.evaluation,derived_from:0
+msgid "Physician who escalated / derived the case"
+msgstr "Médico que escaló / derivado el caso"
+
+#. module: Dental
+#: selection:dental.appointment,validity_status:0
+msgid "To be Invoiced"
+msgstr "A facturar"
+
+#. module: Dental
+#: selection:dental.medication.template,duration_period:0
+#: selection:dental.patient.medication,duration_period:0
+msgid "indefinite"
+msgstr "indefinida"
+
+#. module: Dental
+#: view:dental.patient:0
+msgid "Age:"
+msgstr "Edad:"
+
+#. module: Dental
+#: field:res.partner,relationship:0
+msgid "Relationship"
+msgstr "Relación"
+
+#. module: Dental
+#: field:dental.patient,dob:0
+msgid "Date of Birth"
+msgstr "Fecha de nacimiento"
+
+#. module: Dental
+#: field:dental.medication.template,frequency_unit:0
+#: field:dental.patient.medication,frequency_unit:0
+msgid "unit"
+msgstr "unidad"
+
+#. module: Dental
+#: field:dental.medication.template,end_treatment:0
+#: field:dental.patient.disease,date_stop_treatment:0
+#: field:dental.patient.medication,end_treatment:0
+msgid "End of treatment"
+msgstr "Fin del tratamiento"
+
+#. module: Dental
+#: field:dental.patient.evaluation,bmi:0
+msgid "Body Mass Index"
+msgstr "Índice de Masa Corporal"
+
+#. module: Dental
+#: field:dental.patient.evaluation,partner_id:0
+msgid "patient"
+msgstr "paciente"
+
+#. module: Dental
+#: selection:dental.patient,marital_status:0
+msgid "Divorced"
+msgstr "Divorciado"
+
+#. module: Dental
+#: selection:dental.medication.template,frequency_unit:0
+#: selection:dental.patient.medication,frequency_unit:0
+msgid "seconds"
+msgstr "segundos"
+
+#. module: Dental
+#: view:dental.patient:0
+msgid "Patient General Information"
+msgstr "Información General del Paciente "
+
+#. module: Dental
+#: help:dental.medication.template,frequency:0
+#: help:dental.patient.medication,frequency:0
+msgid "Time in between doses the patient must wait (ie, for 1 pill each 8 hours, put here 8 and select 'hours' in the unit field"
+msgstr "Tiempo entre dosis el paciente debe esperar (es decir, durante 1 pastilla cada 8 horas, poner aquí 8 y seleccione 'hora' en el campo de la unidad"
+
+#. module: Dental
+#: field:dental.patient,id11:0
+#: field:dental.patient,id12:0
+#: field:dental.patient,id13:0
+#: field:dental.patient,id14:0
+#: field:dental.patient,id15:0
+#: field:dental.patient,id16:0
+#: field:dental.patient,id17:0
+#: field:dental.patient,id18:0
+#: field:dental.patient,id21:0
+#: field:dental.patient,id22:0
+#: field:dental.patient,id23:0
+#: field:dental.patient,id24:0
+#: field:dental.patient,id25:0
+#: field:dental.patient,id26:0
+#: field:dental.patient,id27:0
+#: field:dental.patient,id28:0
+#: field:dental.patient,id31:0
+#: field:dental.patient,id32:0
+#: field:dental.patient,id33:0
+#: field:dental.patient,id34:0
+#: field:dental.patient,id35:0
+#: field:dental.patient,id36:0
+#: field:dental.patient,id37:0
+#: field:dental.patient,id38:0
+#: field:dental.patient,id41:0
+#: field:dental.patient,id42:0
+#: field:dental.patient,id43:0
+#: field:dental.patient,id44:0
+#: field:dental.patient,id45:0
+#: field:dental.patient,id46:0
+#: field:dental.patient,id47:0
+#: field:dental.patient,id48:0
+#: field:dental.patient.evaluation,image:0
+#: field:dental.patient.evaluation,image_medium:0
+msgid "Image"
+msgstr "Imagen"
+
+#. module: Dental
+#: selection:dental.medication.template,duration_period:0
+#: selection:dental.patient.medication,duration_period:0
+msgid "months"
+msgstr "meses"
+
+#. module: Dental
+#: view:dental.appointment.invoice:0
+msgid "or"
+msgstr "o"
+
+#. module: Dental
+#: selection:dental.appointment,validity_status:0
+msgid "Invoiced"
+msgstr "facturada"
+
+#. module: Dental
+#: field:dental.patient.evaluation,evaluation_date:0
+msgid "Evaluation Date"
+msgstr "Fecha de Evaluación"
+
+#. module: Dental
+#: model:ir.model,name:Dental.model_dental_patient_disease
+msgid "Disease info"
+msgstr "información de Enfermedades"
+
+#. module: Dental
+#: selection:dental.patient.disease,status:0
+msgid "chronic"
+msgstr "crónica"
+
+#. module: Dental
+#: field:dental.appointment,no_invoice:0
+msgid "Invoice exempt"
+msgstr " exentos de factura"
+
+#. module: Dental
+#: field:dental.patient.medication,discontinued_reason:0
+msgid "Reason for discontinuation"
+msgstr "Motivo de la supresión"
+
+#. module: Dental
+#: view:dental.medication.dosage:0
+msgid "Medication Dosage"
+msgstr "Dosis del Medicamento"
+
+#. module: Dental
+#: view:dental.appointment:0
+#: model:ir.actions.act_window,name:Dental.act_patient_appointments
+#: model:ir.actions.act_window,name:Dental.dental_action_form_appointment
+#: model:ir.actions.act_window,name:Dental.dental_appointment_list
+msgid "Appointments"
+msgstr "Citas"
+
+#. module: Dental
+#: field:dental.medication.template,admin_times:0
+#: field:dental.patient.medication,admin_times:0
+msgid "Admin hours"
+msgstr "horas admininistradas"
+
+#. module: Dental
+#: help:dental.medicament,pregnancy_warning:0
+msgid "Check when the drug can not be taken during pregnancy or lactancy"
+msgstr "Compruebe si el medicamento no se puede tomar durante el embarazo o lactancia"
+
+#. module: Dental
+#: field:dental.patient,critical_info:0
+msgid "Important disease, allergy or procedures information"
+msgstr "Enfermedad, alergia o procedimientos Información adicional"
+
+#. module: Dental
+#: selection:dental.patient.disease,disease_severity:0
+msgid "Severe"
+msgstr "severo"
+
+#. module: Dental
+#: help:dental.patient,age:0
+msgid ""
+"It shows the age of the patient in years(y), months(m) and days(d).\n"
+"If the patient has died, the age shown is the age at time of death, the age corresponding to the date on the death certificate. It will show also \"deceased\" on the field"
+msgstr ""
+"Se muestra la edad del paciente en años (y), mes (m) y días (d).\n"
+"Si el paciente ha muerto, la edad que se muestra es la edad a la hora de la muerte, la edad que corresponde a la fecha en el certificado de defunción. Se mostrará también \"fallecido\" en el campo"
+
+#. module: Dental
+#: view:dental.patient:0
+msgid "ID:"
+msgstr "ID:"
+
+#. module: Dental
+#: field:dental.prescription.order,prescription_date:0
+msgid "Prescription Date"
+msgstr "Fecha de Receta "
+
+#. module: Dental
+#: field:dental.patient.disease,is_allergy:0
+msgid "Allergic Disease"
+msgstr "Enfermedad alérgica"
+
+#. module: Dental
+#: code:addons/Dental/medical_invoice/wizard/wizard_appointment_invoice.py:37
+#, python-format
+msgid "At least one of the selected appointments can not be invoiced"
+msgstr "Al menos una de las citas seleccionadas no se pueden facturar"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,general_info:0
+msgid "General Information"
+msgstr "Información general"
+
+#. module: Dental
+#: selection:dental.patient.evaluation,evaluation_type:0
+msgid "Rutina"
+msgstr "Rutina"
+
+#. module: Dental
+#: help:dental.medicament,pregnancy:0
+msgid "Warnings for Pregnant Women"
+msgstr "Advertencias para Mujeres Embarazadas"
+
+#. module: Dental
+#: field:dental.patient,current_insurance:0
+msgid "Insurance"
+msgstr "Seguros"
+
+#. module: Dental
+#: view:dental.patient:0
+msgid "Odontogram"
+msgstr "Esquema dental"
+
+#. module: Dental
+#: constraint:dental.vaccination:0
+msgid "WARNING !! EXPIRED VACCINE. PLEASE INFORM THE LOCAL HEALTH AUTHORITIES AND DO NOT USE IT !!"
+msgstr "ADVERTENCIA !! Vacunas vencidas. POR FAVOR INFORMAR A LAS AUTORIDADES LOCALES DE SALUD Y NO USE IT !!"
+
+#. module: Dental
+#: selection:dental.physician.line,name:0
+msgid "Thursday"
+msgstr "Jueves"
+
+#. module: Dental
+#: field:dental.vaccination,observations:0
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: Dental
+#: help:dental.patient.medication,adverse_reaction:0
+msgid "Specific side effects or adverse reactions that the patient experienced"
+msgstr "Efectos secundarios específicos o reacciones adversas que el paciente experimentó"
+
+#. module: Dental
+#: view:dental.medicament:0
+#: field:dental.medicament,presentation:0
+msgid "Presentation"
+msgstr "Presentación"
+
+#. module: Dental
+#: field:dental.speciality,name:0
+msgid "Description"
+msgstr "Descripción"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d48:0
+msgid "48"
+msgstr "48"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d46:0
+msgid "46"
+msgstr "46"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d47:0
+msgid "47"
+msgstr "47"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d44:0
+msgid "44"
+msgstr "44"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d45:0
+msgid "45"
+msgstr "45"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d42:0
+msgid "42"
+msgstr "42"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d43:0
+msgid "43"
+msgstr "43"
+
+#. module: Dental
+#: field:dental.patient.evaluation,derived_to:0
+msgid "Derived to Doctor"
+msgstr "Derivado al Doctor"
+
+#. module: Dental
+#: view:dental.patient:0
+#: field:dental.patient,d41:0
+msgid "41"
+msgstr "41"
+
+#. module: Dental
+#: sql_constraint:res.partner:0
+msgid "The partner or patient code must be unique"
+msgstr "El código de socio o paciente debe ser único"
+
+#. module: Dental
+#: help:dental.insurance,category:0
+msgid "Insurance company plan / category"
+msgstr "Plan de la compañía de seguros / categoría"
+
+#. module: Dental
+#: help:dental.patient.disease,doctor:0
+msgid "Physician who treated or diagnosed the patient"
+msgstr "Médico que trata o diagnostica al paciente"
+
+#. module: Dental
+#: selection:dental.patient,blood_type:0
+msgid "AB"
+msgstr "AB"
+
+#. module: Dental
+#: field:dental.patient,photo:0
+msgid "Picture"
+msgstr "Imagen"
+
+#. module: Dental
+#: model:ir.actions.act_window,name:Dental.open_dental_patient_tree
+msgid "Patients Structure"
+msgstr "Estructura del Paciente"
+
+#. module: Dental
+#: help:dental.patient.evaluation,image_medium:0
+msgid "Medium-sized image of the product. It is automatically resized as a 128x128px image, with aspect ratio preserved, only when the image exceeds one of those sizes. Use this field in form views or some kanban views."
+msgstr "Imagen de tamaño mediano del producto. Se cambia de tamaño automáticamente como imagen de 128x128px, con relación de aspecto conservado, sólo cuando la imagen es superior a uno de esos tamaños. Utilice este campo en las vistas de formulario o algunos puntos de vista kanban."
+
+#. module: Dental
+#: selection:dental.insurance,type:0
+msgid "Private"
+msgstr "privado"
+
+#. module: Dental
+#: field:dental.patient.disease,healed_date:0
+msgid "Healed"
+msgstr "Tratado"
+
+#. module: Dental
+#: field:dental.patient.evaluation,glycemia:0
+msgid "Glycemia"
+msgstr "Glycemia"
+
+#. module: Dental
+#: view:dental.physician:0
+#: field:dental.physician,available_lines:0
+msgid "Physician Availability"
+msgstr " Disponibilidad del Médico"
+

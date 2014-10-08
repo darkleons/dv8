@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+	<!-- Patient details -->
+		
+		<record model="ir.ui.view" id="dental_patient_view_referance_source">
+			<field name="name">Patient</field>
+			<field name="model">dental.patient</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="dental.dental_patient_view"/>
+				<field name="arch" type="xml">
+					
+						<field name="receivable"/>
+					
+				</field>
+		</record>
+
+
+	<!-- Appointment details -->
+		
+		<record model="ir.ui.view" id="dental_invoice_appointment_view">
+			<field name="name">Appointment</field>
+			<field name="model">dental.appointment</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="dental.dental_appointment_view"/>
+			<field name="arch" type="xml">
+				<field name="speciality" position="after">
+					<newline/>					
+					<group colspan="4">
+						<field name="no_invoice"/>
+						<field name="validity_status" readonly="1"/>
+						<field name="appointment_validity_date"/>
+					</group>
+					<newline/>
+					<group colspan="4">
+						<field name="consultations" select="2"></field>
+					</group>					
+				</field>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="dental_invoice_appointment_view_button">
+			<field name="name">Appointment</field>
+			<field name="model">dental.appointment</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="dental.dental_appointment_view"/>
+			<field name="arch" type="xml">
+				<sheet position="before">
+					<header>
+						<button name="%(invoice.action_create_appointment_invoice)d" string="Create Invoice" type="action" class="oe_highlight"/>
+					</header>				
+				</sheet>
+			</field>
+		</record>
+		
+		
+
+		
+		
+
+
+
+
+	</data>	
+</openerp>

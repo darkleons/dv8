@@ -1,0 +1,4 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_dental_dent,oa.dental,model_dental_dent,dental.group_user,0,0,0,0
+access_dental_dent2,oa.dental,model_dental_dent,dental.group_manager,0,0,0,0
+

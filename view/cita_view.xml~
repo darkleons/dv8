@@ -1,0 +1,806 @@
+<?xml version="1.0" ?>
+<openerp>
+        <data>
+
+		<record id="view_dental_appointment" model="ir.ui.view">
+			<field name="name">dental.appointment.calendar</field>
+			<field name="model">dental.appointment</field>
+			<field name="type">calendar</field>
+			<field name="arch" type="xml">
+				<calendar string="Appointments" color="doctor" date_start="appointment_date">
+					<field name="patient"/>
+					<field name="doctor"/>
+				</calendar>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="dental_appointment_view">
+			<field name="name">Appointment</field>
+			<field name="model">dental.appointment</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Appointment">
+					<header>
+						<button name="%(action_create_appointment_invoice)d" string="Create Invoice" type="action" class="oe_highlight" attrs="{'invisible':[('validity_status','=','invoiced')]}"/> 
+					</header>
+					<sheet>											
+						<div class="oe_title">
+							<div class="oe_edit_only">
+								<label for="name"/> 
+							</div>
+							<h1>
+								<field name="name" default_focus="1" placeholder="Appointment" />
+							</h1>                                                
+						</div>
+						<group string="General">
+							<group>							
+								<field name="patient" required="1"/>
+								<field name="doctor"/>
+							</group>					
+							<group>
+								<field name="appointment_date" required="1"/>								
+								<field name="speciality"/>	
+<newline/>					
+					<group colspan="4">
+						<field name="no_invoice"/>
+						<field name="validity_status" readonly="1"/>
+						<field name="appointment_validity_date"/>
+					</group>
+					<newline/>
+					<group colspan="4">
+						<field name="consultations" select="2"></field>
+					</group>													
+							</group>							
+						</group>						
+						<group string="Information">					
+							<group>
+								<field nolabel="1" name="comments"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="medical_appointment_tree">
+			<field name="name">Appointments</field>
+			<field name="model">dental.appointment</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string='Appointment Information'>
+					<field name="name"/>
+					<field name="patient"/>
+					<field name="appointment_date"/>
+					<field name="speciality"/>
+					<field name="doctor"/>
+				</tree>
+			</field>
+		</record>
+
+
+    	<record id="dental_appointment_list" model="ir.actions.act_window">
+			<field name="name">Appointments</field>
+			<field name="res_model">dental.appointment</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree</field>
+			<field name="view_id" eval="False"/>		
+		</record>
+	
+		<record id="dental_action_form_appointment" model="ir.actions.act_window">
+				<field name="name">Appointments</field>
+				<field name="res_model">dental.appointment</field>
+				<field name="view_type">form</field>
+				<field name="view_mode">calendar,tree,form</field>
+				<field name="domain">[]</field>
+				<field name="context">{}</field>
+				<field name="view_id" eval="False"/>            
+				<field name="help" type="html">
+				  <p class="oe_view_nocontent_create">
+					Click to add a new appointment.
+				  </p><p>
+					With just a quick glance on the OpenERP appointment screen, you
+					can easily find all the information about your each day appointments;					
+				  </p>
+				</field>
+		</record>
+<menuitem id="main_menu_dental"  name="Dental"  />
+<menuitem id="dental_menu" name="Dental" parent="main_menu_dental" />
+<menuitem id="Citas_menu" name="Citas" parent="dental_menu" action="dental_action_form_appointment" />
+
+		<act_window domain="[('patient', '=', active_id)]" id="act_patient_appointments" name="Appointments" res_model="dental.appointment" src_model="dental.patient"/>
+
+
+
+<!-- Physicians -->
+
+		<record model="ir.ui.view" id="dental_physician_view">
+			<field name="name">Physician</field>
+			<field name="model">dental.physician</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Physician">
+					<group>
+						<group>
+							<field name="name" required="1" context="{'default_is_doctor': True,'default_is_person': True}"/>
+							<field name="speciality"/>							
+						</group>
+					</group>
+					<newline/>
+					<group>
+						<notebook>
+							<page string="Weekly Availability">
+								<field name="available_lines" nolabel="1">									
+									<tree string="Physician Availability" nolabel="1" editable="bottom">
+										<field name="name"/>
+										<field name="start_time" widget="float_time"/>
+										<field name="end_time" widget="float_time"/>																								                                    
+									</tree>
+								</field>
+							</page>						
+							<page string="Extra Info">
+								<field name="info"></field>
+							</page>
+						</notebook>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="dental_physician_tree">
+			<field name="name">Physician List</field>
+			<field name="model">dental.physician</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string='Physician Information'>
+					<field name="name"></field>
+					<field name="code"></field>
+					<field name="speciality"></field>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="dental_action_form_physician">
+			<field name="name">Physicians</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">dental.physician</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="dental_physician_tree"/>
+		</record>
+		<menuitem id="physician_menu" name="Physician" parent="main_menu_dental" />
+		<menuitem action="dental_action_form_physician" id="dental_conf_physician_list" parent="physician_menu"/>
+
+<!-- medication common dosage -->
+
+		<record model="ir.ui.view" id="dental_medication_dosage">
+			<field name="name">Medication Dosage</field>
+			<field name="model">dental.medication.dosage</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Medication Dosage">
+					<field name="name"></field>
+					<field name="code"></field>
+					<field name="abbreviation"></field>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="dental_medication_dosage_tree">
+			<field name="name">Medication Dosage</field>
+			<field name="model">dental.medication.dosage</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string='Medication Dosage'>
+					<field name="name"></field>
+					<field name="code"></field>
+					<field name="abbreviation"></field>
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_dental_medication_dosage_search" model="ir.ui.view">
+			<field name="name">dental.medication.dosage.select</field>
+			<field name="model">dental.medication.dosage</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Search Medication Common Dosages">
+
+					<separator orientation="vertical"/>
+					    <field name="name" select="1"/>
+					    <field name="code" select="1"/>
+					    <field name="abbreviation" select="1"/>
+				<newline/>
+
+				</search>
+			</field>
+		</record>
+
+
+<!-- medicaments -->
+
+                <record model="ir.ui.view" id="dental_medicament_view">
+                        <field name="name">Medicament</field>
+                        <field name="model">dental.medicament</field>
+                        <field name="type">form</field>
+                        <field name="arch" type="xml">
+                                <form string="medicaments">
+					<notebook>
+						<page string="Main Info">
+                                        		<field name="name" required="1"></field>
+                                        		<newline/>
+                                        		<field name="therapeutic_action"></field>
+							<field name="active_component"></field>
+							<field name="price" readonly="1"></field>
+							<newline/>
+                                        		<field name="indications" colspan="4"></field>
+                                        	</page>
+						<page string="Presentation">
+							<field name="presentation"></field>
+						</page>
+						<page string="Composition">
+							<field name="composition"></field>
+						</page>
+
+						<page string="Dosage">
+							<field name="dosage"></field>
+							<newline/>
+							<field name="overdosage"></field>
+						</page>
+
+						<page string="Pregnancy / Lactancy">
+							<field name="pregnancy_warning"></field>
+							<newline/>
+							<field name="pregnancy"></field>
+						</page>
+
+						<page string="Adverse Reactions">
+							<field name="adverse_reaction"></field>
+						</page>
+
+						<page string="Storage Conditions">
+							<field name="storage"></field>
+						</page>
+
+						<page string="Extra Info">
+							<field name="notes"></field>
+						</page>
+					</notebook>
+
+                                </form>
+                        </field>
+                </record>
+
+
+
+                <record model="ir.ui.view" id="dental_medicament_tree">
+                        <field name="name">Medicament List</field>
+                        <field name="model">dental.medicament</field>
+                        <field name="type">tree</field>
+                        <field name="arch" type="xml">
+                                <tree string='medicament'>
+                                        <field name="name"></field>
+                                        <field name="active_component"></field>
+                                        <field name="pregnancy_warning"></field>
+                                        <field name="price"></field>
+                                </tree>
+                        </field>
+                </record>
+
+
+                <record model="ir.actions.act_window" id="dental_action_tree_medicament">
+                        <field name="name">Medicaments</field>
+                        <field name="type">ir.actions.act_window</field>
+                        <field name="res_model">dental.medicament</field>
+                        <field name="view_type">form</field>
+                        <field name="view_id" ref="dental_medicament_tree"/>
+                </record>
+		<menuitem action="dental_action_tree_medicament" id="dental_edit_medicament" parent="physician_menu" />
+
+                <record model="ir.actions.act_window" id="dental_action_report_medicament">
+                        <field name="name">Medicament List</field>
+                        <field name="type">ir.actions.act_window</field>
+                        <field name="res_model">dental.medicament</field>
+                        <field name="view_type">tree</field>
+                        <field name="view_id" ref="dental_medicament_tree"/>
+                </record>
+
+		<menuitem action="dental_action_report_medicament" id="dental_list_medicament" parent="physician_menu"/>
+		
+		<record id="view_dental_medicament_filter" model="ir.ui.view">
+			<field name="name">dental.medicament.select</field>
+			<field name="model">dental.medicament</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Search Medicament">
+
+					<separator orientation="vertical"/>
+					    <field name="name" select="1"/>
+					    <field name="active_component" select="1"/>
+					    <field name="therapeutic_action" select="1"/>
+
+					<newline/>
+
+				</search>
+			</field>
+		</record>
+
+
+
+<!-- Patient -->
+
+		<record id="view_dental_patient_filter" model="ir.ui.view">
+			<field name="name">dental.patient.select</field>
+			<field name="model">dental.patient</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Search Patients">
+					<filter icon="terp-personal" string="My Patients" domain="[('user_id','=',uid)]"/>
+
+					<separator orientation="vertical"/>
+					    <field name="name" select="1"/>
+					    <field name="lastname" select="1" />
+					    <field name="patient_id" string="Patient ID" select="1"/>
+					    <field name="identifier" string="SSN" select="1"/>
+
+					<newline/>
+					<group expand="0" string="Group By..." colspan="11" col="11" groups="base.group_extended">
+						<filter string="Sex" icon="terp-personal" domain="[]" context="{'group_by':'sex'}"/>
+						<filter string="Doctor" icon="terp-personal" domain="[]" context="{'group_by':'primary_care_doctor'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+
+
+		<record model="ir.ui.view" id="dental_patient_view">
+			<field name="name">Patient</field>
+			<field name="model">dental.patient</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+			<form string="Patient" version="7.0">
+								
+					<field name="photo"  nolabel="1" class="oe_left oe_avatar" img_width="120" img_height="120" width="120" height="120" widget="image"/>					
+					<div class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="name"/> 
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Patient Name" context="{'default_is_patient': True,'default_is_person': True}"/>
+                        </h1>                                                
+                    </div>
+					<group>
+						<group>
+							<field name="patient_id"/>							
+							<field name="dob" required="1"/>
+							<field name="marital_status" required="1" />
+						</group>
+						<group>
+							<field name="sex" required="1"/>
+							<field  name="age"/>
+							<field name="current_address" required="1"/>
+						</group>
+					</group>	
+					<group>
+						<separator colspan="4" string="Patient Critical Information"/>	
+						<newline/>
+						<field colspan="6" name="critical_info" nolabel="1"/>				
+					</group>				
+					<notebook>	
+							<page string="General Information">	
+								<group string="Patient General Information">
+									<group>
+										 <field name="blood_type"/>	>									
+										<field name="ethnic_group"/>										
+										<field name="current_insurance"/>		
+									</group>
+									<group>
+										<field name="rh"/>
+							
+										<field name="primary_care_doctor"/>
+									</group>
+								</group>
+																								
+								<group colspan="4" string="Patient Extra Information">
+									<field colspan="4" name="general_info" nolabel="1"/>
+									<newline/>
+								</group>	
+						</page>
+
+						<page string="Odontogram">
+							<group colspan="16" col="16">
+		<separator string="Odontogram" colspan="16"/>
+
+<text col="1">18</text>
+<text col="1">17</text>
+<text col="1">16</text>
+<text col="1">15</text>
+<text col="1">14</text>
+<text col="1">13</text>
+<text col="1">12</text>
+<text col="1">11</text>
+<text col="1">21</text>
+<text col="1">22</text>
+<text col="1">23</text>
+<text col="1">24</text>
+<text col="1">25</text>
+<text col="1">26</text>
+<text col="1">27</text>
+<text col="1">28</text>
+<field name="id18"  widget="image" class="oe_left oe_avatar" readonly="1" col="1" nolabel="1"/>
+<field name="id17" widget="image"  class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id16" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id15" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id14" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id13" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id12" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id11" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+
+<field name="id21" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id22" widget="image"  class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id23" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id24" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id25" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id26" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id27" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id28" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+				
+<field name="d18" col="1" editable="top" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d17" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d16" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d15" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d14" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d13" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d12" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d11" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+
+<field name="d21" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d22" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d23" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d24" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d25" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d26" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d27" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d28" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<separator  colspan="16"/>
+<separator  colspan="16"/>
+<text col="1">48</text>
+<text col="1">47</text>
+<text col="1">46</text>
+<text col="1">45</text>
+<text col="1">44</text>
+<text col="1">43</text>
+<text col="1">42</text>
+<text col="1">41</text>
+<text col="1">31</text>
+<text col="1">32</text>
+<text col="1">33</text>
+<text col="1">34</text>
+<text col="1">35</text>
+<text col="1">36</text>
+<text col="1">37</text>
+<text col="1">38</text>
+
+<field name="id48" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id47" widget="image"  class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id46" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id45" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id44" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id43" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id42" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id41" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+
+<field name="id31" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id32" widget="image"  class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id33" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id34" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id35" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id36" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id37" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+<field name="id38" widget="image" class="oe_avatar oe_left" readonly="1" col="1" nolabel="1"/>
+				
+<field name="d48" col="1" editable="top" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d47" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d46" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d45" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d44" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d43" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d42" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d41" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+
+<field name="d31" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d32" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d33" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d34" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d35" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d36" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d37" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+<field name="d38" col="1" nolabel="1" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+			</group>							
+								
+		
+							
+						</page>						
+
+						<page string="Evaluations">
+							<field name="evaluation_ids" colspan="4" nolabel="1" widget="one2many_list"/>
+						</page>
+	
+						<page string="Diseases">
+								<field name="diseases" nolabel="1" widget="one2many_list"/>
+						</page>
+	
+						<page string="Medication">
+							<group>	
+								<field name="medications" string="Medication History" colspan="4" widget="one2many_list"/>
+							</group>
+						
+						</page>	
+	
+
+
+						</notebook>
+				
+			</form>
+		</field>
+	</record>
+	
+	 <record model="ir.ui.view" id="dental_patient_kanban_view">
+        <field name="name">Patient Kanban</field>
+        <field name="model">dental.patient</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_employee_vignette">
+                            <div class="oe_employee_image">
+                                <a type="open"><img t-att-src="kanban_image('dental.patient', 'photo', record.id.value)" class="oe_employee_picture"/></a>
+                            </div>
+                            <div class="oe_employee_details">
+                                <h4>
+                                    <a type="open"><field name="name"/></a>
+                                </h4>
+                                <ul>
+                                    <li t-if="record.patient_id.raw_value">ID: <field name="patient_id"/></li>
+                                    <li t-if="record.sex.raw_value">Sex: <field name="sex"/></li>
+                                    <li t-if="record.dob.raw_value">DOB: <field name="dob"/></li>
+                                    <li t-if="record.rh.raw_value">Blood Group: <field name="blood_type"/> <field name="rh"/></li>
+                                    <li t-if="record.age.raw_value">Age: <field name="age"/></li>
+                                </ul>
+                            </div>
+                        </div>                        
+                    </t>
+                </templates>
+            </kanban>
+
+        </field>
+    </record>
+
+	<record model="ir.ui.view" id="dental_patient_tree">
+		<field name="name">Patient List</field>
+		<field name="model">dental.patient</field>
+		<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string='Patient Information'>
+					<field name="name"></field>					
+					<field name="patient_id"></field>
+					<field name="sex"></field>
+					<field name="dob"></field>
+					<field name="primary_care_doctor"></field>
+				</tree>
+			</field>
+	</record>
+
+	<record id="open_dental_patient_tree" model="ir.actions.act_window">
+            <field name="name">Patients Structure</field>
+            <field name="res_model">dental.patient</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="dental_patient_tree"/>
+            <field name="domain">[]</field>            
+    </record>
+
+    <record id="open_dental_patient_list" model="ir.actions.act_window">
+		<field name="name">Patients</field>
+		<field name="res_model">dental.patient</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">form,tree</field>
+		<field name="view_id" eval="False"/>		
+	</record>
+
+	<record id="dental_patient_action_tree" model="ir.actions.act_window">
+            <field name="name">Patients</field>
+            <field name="res_model">dental.patient</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="view_id" eval="False"/>            
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new patient.
+              </p><p>
+                With just a quick glance on the OpenERP patient screen, you
+                can easily find all the information you need for each patients;
+                persona information, medical history, vaccination history, etc.
+              </p>
+            </field>
+    </record>
+	<!-- Descomente esta-->
+	<record model="ir.actions.act_window" id="dental_patient_action_tree">
+		<field name="name">Patients</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">dental.patient</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">kanban,tree,form</field>
+		<field name="view_id" ref="dental_patient_tree"/>
+	</record>
+
+	<menuitem action="dental_patient_action_tree" parent="dental_menu"  id="dental_edit_patient"/>
+
+
+		
+	<!-- Patient Medications -->
+
+                <record model="ir.ui.view" id="dental_patient_medication_view">
+                        <field name="name">Medication</field>
+                        <field name="model">dental.patient.medication</field>
+                        <field name="type">form</field>
+                        <field name="arch" type="xml">
+                                <form string="Medication">
+                               		<field name="medicament" required="1"></field>
+									<field name="doctor"/>
+									<newline/>
+                             		<field name="is_active"></field>
+                               		
+                               		<newline/>
+                               		<field name="start_treatment" required="1"></field>
+					<field name="end_treatment"></field>
+					<newline/>
+                               		<field name="course_completed"></field>
+                               		<field name="discontinued"></field>
+                               		<field name="discontinued_reason"></field>
+					<newline/>
+					<group colspan="4" string="Dosage">
+						<field name="qty"></field>
+						<newline/>
+	                               		<field name="duration"></field>
+	                               		<field name="duration_period"></field>
+						<newline/>
+						<separator string="Common Dosage"/>
+						<newline/>
+						<field name="common_dosage"></field>
+						<field name="admin_times"></field>
+						<newline/>
+						<separator string="Specific Dosage"/>
+						<newline/>
+						<field name="frequency"></field>
+                               			<field name="frequency_unit"></field>
+						<newline/>
+					</group>
+					<newline/>
+					<separator string="Notes"/>
+					<newline/>
+                               		<field name="notes" nolabel="1" colspan="4"></field>
+
+                                </form>
+                        </field>
+                </record>
+
+
+
+                <record model="ir.ui.view" id="dental_patient_medication_tree">
+                        <field name="name">Medication</field>
+                        <field name="model">dental.patient.medication</field>
+                        <field name="type">tree</field>
+                        <field name="arch" type="xml">
+                                <tree string='Medication' colors="blue:is_active">
+                                        <field name="medicament"></field>
+					
+                                        <field name="start_treatment"></field>
+                                        <field name="end_treatment"></field>
+                                        <field name="course_completed"></field>
+                                        <field name="discontinued"></field>
+                                        <field name="is_active"></field>
+
+                              </tree>
+                        </field>
+                </record>
+		
+<!-- PRODUCT -->
+                <record model="ir.ui.view" id="view_product_form1">
+                        <field name="name">product.normal.form</field>
+                        <field name="model">product.product</field>
+                        <field name="inherit_id" ref="product.product_normal_form_view" />
+                        <field name="type">form</field>
+                        <field name="arch" type="xml">
+							<notebook>
+								<page string="Medical">
+									<group> 
+										<field name="is_medicament"></field>
+										<field name="is_vaccine"></field>
+									</group>
+									<group>
+										<field name="is_bed"></field>
+									</group>
+								</page>
+							</notebook>
+	                </field>
+               </record>
+
+
+
+
+
+		<!-- Patient details -->
+		
+	<record model="ir.ui.view" id="dental_patient_evaluation_view">
+		<field name="name">Patient Evaluation</field>
+		<field name="model">dental.patient.evaluation</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+			<form string="Patient" version="7.0">
+				<notebook>
+					<page string="Main Info">
+<group>
+						<field name="name" readonly="1" string="Patient"/>
+						<field name="evaluation_type"/>
+						<newline/>
+						<field name="evaluation_date" required="1"/>
+						<field name="evaluation_endtime"/>
+</group>
+						<newline/>
+<group>
+						<field name="chief_complaint" required="1"/>
+						<field name="derived_from"/>
+						<newline/>
+						<separator string="Evaluation Summary" colspan="4"/>
+						<field name="notes_complaint" nolabel="1" colspan="4"/>
+</group>
+						<newline/>
+					</page>
+<page string="Fotografia"  >
+<group>
+<field name="image_medium" widget="image" class="oe_avatar oe_left" />
+<field name="image" readonly="1"/>
+</group>
+</page>
+					
+
+				</notebook>
+			</form>
+		</field>
+	</record>
+
+
+
+
+
+		<record model="ir.ui.view" id="dental_patient_evaluation_tree">
+		<field name="name">Patient Evaluation List</field>
+		<field name="model">dental.patient.evaluation</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree  string='Evaluations'>
+				<field name="evaluation_date"></field>
+				<field name="next_evaluation"></field>
+			</tree>
+		</field>
+	</record>
+
+
+	<record model="ir.actions.act_window" id="dental_action_form_evaluation">
+		<field name="name">Patient Evaluation</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">dental.patient.evaluation</field>
+		<field name="view_type">form</field>
+		<field name="view_id" ref="dental_patient_evaluation_view"/>
+	</record>
+
+
+	<!-- Appointment details -->
+		
+
+
+
+
+	</data>
+</openerp>
